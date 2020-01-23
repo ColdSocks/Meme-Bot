@@ -6,12 +6,18 @@ const testFolder = './audio/';
 var audio = []
 var currentaudio
 
+//reads in all the files inside 'testFolder' and populates the audio array 
 fs.readdirSync(testFolder).forEach(file => {
   if (file.includes(".mp3")){
     audio.push(file.substring(0,file.length-4));
   }
 });
-console.log(audio)
+
+
+
+//console.log(audio)
+
+//main logic of processing messages from the discord message channel 
 bot.on('message', message => {
   if (isReady && message.channel.id==='550674996498792452')
   {
@@ -39,4 +45,5 @@ bot.on('message', message => {
   }
 });
 
+//todo need to find out what this line below means
 bot.login('#');
